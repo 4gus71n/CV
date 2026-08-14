@@ -12,7 +12,6 @@ description: Mobile Engineer with over a decade of Android and iOS experience. K
 
 ## Contact
 
-* Location: Buenos Aires, Argentina
 * Email: agustin.tomas.larghi@gmail.com
 * Blog: [dev.to/4gus71n](https://dev.to/4gus71n)
 * LinkedIn: [linkedin.com/in/aandroid](https://www.linkedin.com/in/aandroid)
@@ -228,11 +227,6 @@ This was my first job. I was hired to do backend development on a Spring MVC ser
   "name": "Agustin Tomas Larghi",
   "jobTitle": "Mobile Engineer | Android Specialist | Engineering Leader",
   "email": "mailto:agustin.tomas.larghi@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Buenos Aires",
-    "addressCountry": "AR"
-  },
   "url": "https://github.com/4gus71n/CV",
   "sameAs": [
     "https://dev.to/4gus71n",
