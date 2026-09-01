@@ -3,7 +3,7 @@ layout: default
 title: Agustin Tomas Larghi — Senior Mobile Engineer | Android · iOS · AI-First
 full_name: Agustin Tomas Larghi
 headline: Android · iOS · Mobile · +14 YOE · Team Lead · Agentic Engineer + AI First
-location: Argentina · Open to international remote
+location: Argentina/Uruguay · Open to international remote
 photo: /assets/img/profile.jpg
 description: Senior Mobile Engineer with 14+ years of experience in Android, iOS and cross-platform development. Engineering leader, agentic engineer, AI-first.
 contact:
@@ -44,7 +44,7 @@ languages:
 
 ## Summary
 
-Senior Mobile Engineer with 14+ years of experience building production software that real people use every day — from the Android 2.2 and ActionBarSherlock era to Kotlin, Jetpack, Compose, and modern app architecture. I'm most experienced with Android, with production experience in iOS and cross-platform development (Kotlin Multiplatform, Cordova). I'm passionate about building teams from scratch, following best practices, and setting everything up for success — scalable architecture, mentoring, and remote collaboration across startups and large enterprises.
+**Senior Mobile Engineer with 14+ years of experience** building production software that real people use every day — from the Android 2.2 and ActionBarSherlock era to Kotlin, Jetpack, Compose, and modern app architectures. I'm most experienced with Android native development, but I also have production experience in iOS and cross-platform technologies (Kotlin Multiplatform, React, Flutter). I'm passionate about building teams from scratch, following best practices, and setting everything up for success — scalable architecture, mentoring, and remote collaboration across startups and large enterprises.
 
 Beyond mobile, I'm focused on the next major shift in software engineering: **AI-first and agentic engineering** — how LLMs, AI coding agents, and agentic workflows change the way we design, build, test, and maintain software. I'm open to international remote opportunities.
 
