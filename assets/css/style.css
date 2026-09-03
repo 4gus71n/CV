@@ -226,6 +226,16 @@ body {
 
 .content h2:not(:first-child) { margin-top: 44px; }
 
+.content h2.sub {
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+.content h2.sub::before {
+  width: 5px;
+  height: 18px;
+}
+
 .content p { margin: 0 0 14px; }
 
 .content a {
@@ -308,6 +318,17 @@ body {
 
 .job-links { margin-top: 10px; font-size: 13px; }
 
+/* Compact "Earlier Experience" entries */
+.job-mini {
+  padding: 12px 0;
+}
+
+.job-mini .job-desc {
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
 /* Footer note */
 .footer-note {
   margin-top: 40px;
@@ -339,18 +360,107 @@ body {
 /* ---------- Print ---------- */
 
 @media print {
-  body { background: #fff; }
+  :root {
+    --sidebar-w: 228px;
+    --radius: 0;
+  }
+
+  @page {
+    size: A4;
+    margin: 9mm;
+  }
+
+  body {
+    background: #fff;
+    font-size: 12px;
+    line-height: 1.4;
+  }
 
   .page {
     box-shadow: none;
     margin: 0;
     border-radius: 0;
     max-width: none;
+    grid-template-columns: var(--sidebar-w) 1fr;   /* keep two columns on paper */
   }
 
-  .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sidebar {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 18px 16px;
+  }
 
-  .job { break-inside: avoid; }
+  .profile { margin-bottom: 14px; }
 
-  a { text-decoration: none; }
+  .avatar { width: 96px; height: 96px; }
+
+  .name { font-size: 19px; margin: 12px 0 5px; }
+
+  .headline { font-size: 11.5px; }
+
+  .location { font-size: 11px; margin: 6px 0 0; }
+
+  .block { margin-bottom: 12px; }
+
+  .block h2 { font-size: 10.5px; margin-bottom: 9px; padding-bottom: 5px; }
+
+  .contact-list li { margin-bottom: 6px; }
+
+  .contact-list a { font-size: 11px; }
+
+  .skill-group { margin-bottom: 9px; }
+
+  .skill-group h3 { font-size: 9.5px; margin-bottom: 5px; }
+
+  .tag { font-size: 10px; padding: 2px 8px; }
+
+  .lang-list li { padding: 3px 0; font-size: 11px; }
+
+  .content {
+    padding: 20px 24px;
+  }
+
+  .content p,
+  .job ul li,
+  .job-desc {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .job ul li { margin-bottom: 3px; }
+
+  .content h2 {
+    font-size: 14.5px;
+    margin: 0 0 8px;
+  }
+
+  .content h2:not(:first-child),
+  .content h2.sub {
+    margin-top: 16px;
+  }
+
+  .content h2.sub { font-size: 12.5px; }
+
+  .job {
+    break-inside: avoid;
+    padding: 8px 0;
+  }
+
+  .job-mini { padding: 5px 0; }
+
+  .job-title { font-size: 13.5px; }
+
+  .job-head { margin-bottom: 1px; }
+
+  .job-period { font-size: 10.5px; padding: 2px 8px; }
+
+  .job-meta { font-size: 11px; margin-top: 2px; }
+
+  .job-desc { margin: 4px 0 5px; }
+
+  .footer-note { margin-top: 14px; padding-top: 8px; font-size: 10px; }
+
+  a {
+    text-decoration: none;
+  }
 }
