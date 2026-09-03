@@ -1,0 +1,182 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+cv:
+  name: Agustin Tomas Larghi
+  headline: Senior Mobile Engineer · Team Lead · Android · iOS · 14+ years
+  location: Argentina/Uruguay · Open to international remote
+  email: agustin.tomas.larghi@gmail.com
+  photo: assets/img/profile.jpg
+  custom_connections:
+    - placeholder: dev.to/4gus71n
+      url: https://dev.to/4gus71n
+      fontawesome_icon: dev
+  social_networks:
+    - network: LinkedIn
+      username: aandroid
+    - network: GitHub
+      username: 4gus71n
+    - network: StackOverflow
+      username: 1403997/4gus71n
+  sections:
+    Summary:
+      - >-
+        **Senior Mobile Engineer with 14+ years of experience** building production
+        software that real people use every day — from the Android 2.2 and
+        ActionBarSherlock era to Kotlin, Jetpack, Compose, and modern app
+        architectures. Most experienced with Android native development, with
+        production experience in iOS and cross-platform technologies (Kotlin
+        Multiplatform, React, Flutter). Passionate about building teams from
+        scratch, following best practices, and setting everything up for success —
+        scalable architecture, mentoring, and remote collaboration across startups
+        and large enterprises.
+      - >-
+        Focused on the next major shift in software engineering: **AI-first and
+        agentic engineering** — how LLMs, AI coding agents, and agentic workflows
+        change the way we design, build, test, and maintain software. Open to
+        international remote opportunities.
+      - >-
+        For more details on my experience or to request references, feel free to
+        reach out on [LinkedIn](https://www.linkedin.com/in/aandroid).
+    Experience:
+      - company: Signos
+        position: Senior Mobile Engineer · Team Lead
+        start_date: 2023-04
+        end_date: present
+        location: Remote
+        summary: >-
+          Leads Signos' Android team for a continuous glucose monitoring (CGM)
+          health platform used for metabolic-health and weight-management programs.
+        highlights:
+          - >-
+            Lead the Android team end-to-end — planning, architecture, code review
+            and delivery milestones — in close partnership with product, design and
+            QA.
+          - >-
+            Owned the Stelo/G7 CGM hardware integration and kept the legacy G6
+            pipeline stable in production across the device transition.
+          - >-
+            Sustained a **+98% crash-free rate** (Firebase) on a **4.2★** rated app
+            with **weekly internal test builds** and **bi-weekly releases** to
+            users.
+          - >-
+            Implemented a menstrual cycle tracking tool end-to-end, low-glucose
+            event tracking, and large-scale refactors of major code areas; led UI
+            redesigns across large parts of the app.
+          - >-
+            Drive AI-first, agentic engineering on the team — coding agents (Claude
+            Code, Codex, OpenCode, CodeGraph) handle a meaningful share of
+            implementation, review and test generation.
+      - company: Sandboxx
+        position: Senior Android Engineer
+        start_date: 2022-11
+        end_date: 2023-04
+        location: Remote · Contract · [Google Play](https://play.google.com/store/apps/details?id=com.sandboxx.android)
+        summary: >-
+          Shipped long-overdue features (phone-number sign-up, "Muster" recruit
+          messaging) and modernized DI and multi-module architecture in a legacy
+          codebase.
+      - company: Glide / Compass
+        position: Android Tech Lead · Mobile Engineer Manager
+        start_date: 2021-10
+        end_date: 2022-11
+        location: Remote
+        summary: >-
+          Real-estate transaction management platform acquired by Compass. Built the
+          Glide Android app from the ground up, then managed a 4-person team across
+          Android and iOS.
+        highlights:
+          - >-
+            Built the Glide Android app from zero — foundation architecture, release
+            pipeline and app-store launch — for one of the largest real-estate
+            platforms in California.
+          - >-
+            Managed a 4-person mobile team across Android and iOS, guiding members
+            through the Compass acquisition and post-acquisition onboarding.
+          - >-
+            Set up in-memory caching with Room and a multi-module Dagger/Hilt graph
+            (SubComponents) that kept shared code clean across features.
+      - company: Jyve
+        position: Android Tech Lead
+        start_date: 2021-04
+        end_date: 2021-10
+        location: Remote
+        summary: >-
+          Led a Java→Kotlin migration and a job-scheduling feature for a freelance
+          retail platform. Company ceased operations in Oct 2021.
+      - company: Theorem (Citrusbyte)
+        position: Android Tech Lead
+        start_date: 2018-10
+        end_date: 2021-04
+        location: Remote
+        summary: >-
+          Tech lead for First American, the largest title-insurance company in the
+          US. Also delivered an iOS retail project for Apple.
+        highlights:
+          - >-
+            Led development of the ClarityFirst Android app from scratch —
+            architecture, build, release and post-launch handover (KTLO) to the
+            client's internal team.
+          - >-
+            Led biometric lock-screen R&D across Android and iOS, influencing the
+            security approach for both platforms.
+      - company: SI Play / SportsEngine
+        position: Senior Android Engineer
+        start_date: 2016-09
+        end_date: 2018-03
+        location: Remote
+        summary: >-
+          Youth-sports platform acquired by SportsEngine/NBC. Scaled the app to
+          ~300k DAU; migrated MVP→MVVM, single→multi-module, and added offline-first
+          support with RxJava.
+      - company: Globant · Truelogic · GlobalLogic
+        position: Senior / SSR Android Engineer
+        start_date: 2015-07
+        end_date: 2018-10
+        location: Remote & Onsite
+        summary: >-
+          Senior Android roles for US clients: Royal Caribbean passenger app
+          (Globant), US client apps (Truelogic), and DirecTV antenna-alignment tool
+          + Gulfstream in-flight apps (GlobalLogic).
+      - company: Arzion · San Martín University
+        position: Mobile Engineer · Software Consultant
+        start_date: 2012-05
+        end_date: 2015-07
+        location: Onsite
+        summary: >-
+          Early career: radio-streaming, e-commerce and beacon-based social apps
+          (Arzion); first mobile work on an educational app, from PhoneGap/HTML5 to
+          native Android (San Martín).
+    Skills:
+      - label: Languages
+        details: Kotlin, Java, Swift, Rust, Python
+      - label: Android
+        details: Jetpack Compose, Coroutines, Flow, Room, Realm, Hilt, Dagger, Koin, Gradle
+      - label: Architecture
+        details: MVVM, MVP, Clean Architecture, Multi-module, Offline-first, DI
+      - label: Platforms
+        details: Android, iOS, Kotlin Multiplatform
+      - label: Testing & CI/CD
+        details: Unit Testing, Espresso, Maestro, Robolectric, Bitrise, GitHub Actions, Jenkins
+      - label: AI & Agentic Engineering
+        details: Agentic Workflows, LLMs, Claude Code, Codex, OpenCode, CodeGraph
+    Languages:
+      - label: Spanish
+        details: Native
+      - label: English
+        details: Professional
+design:
+  theme: engineeringresumes
+  page:
+    size: a4
+    show_footer: false
+    show_top_note: false
+settings:
+  current_date: today
+  render_command:
+    output_folder: rendercv_output
+    pdf_path: OUTPUT_FOLDER/agustin_tomas_larghi_CV.pdf
+    html_path: OUTPUT_FOLDER/agustin_tomas_larghi_CV.html
+    markdown_path: OUTPUT_FOLDER/agustin_tomas_larghi_CV.md
+    png_path: OUTPUT_FOLDER/agustin_tomas_larghi_CV.png
+    dont_generate_png: false
+    dont_generate_typst: false
+  pdf_title: Agustin Tomas Larghi - CV

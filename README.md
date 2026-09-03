@@ -1,79 +1,85 @@
 # CV — Agustin Tomas Larghi
 
-Source for my online résumé, rendered as a modern, two-column, print-friendly page and hosted on **GitHub Pages**.
+Source for my online résumé, built with **RenderCV** and hosted on **GitHub Pages**.
 
 **Live page:** <https://4gus71n.github.io/CV/CV.html>
+**PDF:** <https://4gus71n.github.io/CV/CV.pdf>
+**Plain text / Markdown:** <https://4gus71n.github.io/CV/CV.md>
 
 ---
+
+## How it works
+
+**`rendercv.yaml` is the single source of truth** — everything about the CV lives there
+(name, headline, contact, summary, experience, skills, design theme).
+
+On every push to `main`, a GitHub Action (`.github/workflows/render-cv.yml`) runs
+RenderCV to generate `CV.html`, `CV.md` and `CV.pdf`, then deploys them to GitHub
+Pages. So the workflow is: *edit YAML → push → site auto-updates*.
+
+```
+rendercv.yaml  ──(RenderCV, in CI)──▶  CV.html  +  CV.md  +  CV.pdf  ──▶  GitHub Pages
+```
 
 ## Contents
 
 | File | Purpose |
 | --- | --- |
-| `CV.md` | The CV content — front matter (name, headline, contact, skills, languages) + body (summary, experience). **This is the file you edit.** |
-| `_layouts/default.html` | Jekyll layout that turns `CV.md` into the page structure (sidebar + main column). |
-| `assets/css/style.css` | All styling: colors, layout, responsive + print rules. |
-| `assets/img/profile.jpg` | Profile photo shown in the sidebar. |
+| `rendercv.yaml` | **The CV content.** Name, headline, contact, summary, experience, skills, theme. **This is the file you edit.** |
+| `.github/workflows/render-cv.yml` | GitHub Action that renders the YAML and deploys to Pages on every push. |
+| `CV.html` / `CV.md` / `CV.pdf` | Generated output (updated automatically by CI — don't hand-edit). |
+| `assets/img/profile.jpg` | Profile photo referenced by `rendercv.yaml`. |
 | `index.html` | Redirect so `…/CV/` points to `CV.html`. |
-| `_config.yml` | Site metadata (title, description, base URL). |
-| `deploy.sh` | One-command build + publish script (see below). |
+| `deploy.sh` | Optional local helper to render + push (see below). |
 
-## How it works
+## Editing the CV
 
-This is a **Jekyll** site. GitHub Pages automatically builds `main` on every push and serves the result — so the workflow is: *edit → push → live*.
-
-The page is generated from `CV.md`. Keep everything in the front matter at the top structured as-is; Jekyll feeds it into `_layouts/default.html`:
+Edit `rendercv.yaml`. The structure is:
 
 ```yaml
----
-name: Agustin Tomas Larghi            # sidebar name
-headline: Android · iOS · Mobile …    # subtitle under the name
-photo: /assets/img/profile.jpg
-contact:
-  - type: email
-    label: …
-    url: mailto:…
-skills:
-  - name: Languages
-    items: [Kotlin, Java, Swift]
-languages:
-  - name: Spanish
-    level: Native
----
+cv:
+  name: Agustin Tomas Larghi
+  headline: Senior Mobile Engineer · Team Lead · Android · iOS · 14+ years
+  email: agustin.tomas.larghi@gmail.com
+  photo: assets/img/profile.jpg
+  sections:
+    Summary:          # free-text section
+      - paragraph one…
+    Experience:       # experience entries
+      - company: Signos
+        position: Senior Mobile Engineer · Team Lead
+        start_date: 2023-04
+        end_date: present
+        highlights:
+          - bullet point…
+    Skills:           # one-line entries
+      - label: Languages
+        details: Kotlin, Java, Swift
+design:
+  theme: engineeringresumes   # ATS-first, single column
 ```
 
-## Quick start (local)
+- Dates are `YYYY-MM` (or `YYYY-MM-DD`, `YYYY`). Use `present` for ongoing roles.
+- Markdown is supported inside summaries and highlights.
+- Section names are arbitrary — add/reorder sections freely.
+- The active theme is `engineeringresumes` (r/EngineeringResumes best practices).
+  Built-in alternatives: `classic`, `sb2nov`, `moderncv`, `harvard`, `engineeringclassic`, etc.
 
-If you want to preview changes before deploying:
+## Previewing locally
 
 ```bash
-# 1. Install Ruby + Jekyll + the GitHub Pages gem
-gem install github-pages
+# 1. Install RenderCV
+pip install "rendercv[full]"
 
-# 2. Build the site locally (output goes to _site/)
-jekyll build --baseurl "/CV"
-
-# 3. Or serve it with live reload at http://localhost:4000/CV/CV.html
-jekyll serve --baseurl "/CV"
+# 2. Render (outputs land in rendercv_output/)
+rendercv render rendercv.yaml
 ```
 
-On macOS with Homebrew, the Jekyll binary usually ends up in `~/.gem/ruby/<ver>/bin` — add it to your `PATH` if `jekyll` isn't found:
-
-```bash
-export PATH="$HOME/.gem/ruby/3.4.0/bin:/opt/homebrew/opt/ruby/bin:$PATH"
-```
+This produces `agustin_tomas_larghi_CV.pdf` and `.html` — open them to review.
 
 ## Deploying
 
-The easiest way is the included script — it builds locally (so errors surface before anything is published), commits, pushes, and then confirms the live site is up:
-
-```bash
-./deploy.sh                      # commit "Update CV" + push
-./deploy.sh "Update headline"    # custom commit message
-./deploy.sh --check              # only validate the local build, don't push
-```
-
-### Manually
+Just commit and push — CI renders and deploys automatically:
 
 ```bash
 git add -A
@@ -81,15 +87,26 @@ git commit -m "Update CV"
 git push origin main
 ```
 
-GitHub Pages picks it up within a minute or two — you can watch progress under **Actions → pages build and deployment** on the repo.
+Watch progress under **Actions → Render CV and Deploy** on the repo.
+
+### Optional: local helper script
+
+```bash
+./deploy.sh                      # render locally, commit "Update CV", push
+./deploy.sh "Update headline"    # custom commit message
+./deploy.sh --check              # only render locally, don't push
+```
 
 ## Editing tips
 
-- **Text / experience / bullets** → edit `CV.md` body directly.
-- **Headline, contact links, skills, languages** → edit the front matter at the top of `CV.md`.
-- **Colors & layout** → tweak the CSS variables at the top of `assets/css/style.css` (`--navy-*`, `--accent`, `--sidebar-w`, …).
-- **Profile photo** → replace `assets/img/profile.jpg` (square crop works best; the avatar renders as a circle).
+- **Headline / contact / links** → top of `rendercv.yaml`.
+- **Skills** → `Skills` section (one-line entries).
+- **Profile photo** → replace `assets/img/profile.jpg` (square crop; renders top-left in the PDF header).
+- **Look & feel** → change `design.theme`, or tweak the `design:` block (colors, fonts, margins are all configurable — see the commented defaults in `rendercv new`).
+- **Don't edit `CV.html` / `CV.md` / `CV.pdf` by hand** — CI regenerates them from the YAML.
 
-## Printing / PDF
+## ATS / printing
 
-The page is print-ready. Use your browser's **Print → Save as PDF** (A4 / Letter) — the sidebar keeps its dark background and each job entry stays on one page.
+The `engineeringresumes` theme is built from r/EngineeringResumes best practices:
+single column, no tables or icons in the body, parseable headings — so it survives
+both ATS scanners and human review. `CV.pdf` prints cleanly on a single page.
