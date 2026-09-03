@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Agustin Tomas Larghi — Senior Android Engineer · Team Lead · AI-First
+title: Agustin Tomas Larghi — Senior Mobile Engineer · Team Lead · AI-First
 full_name: Agustin Tomas Larghi
 headline: Android · iOS · Mobile · +14 YOE · Team Lead · Agentic Engineer + AI First
 location: Argentina/Uruguay · Open to international remote
 photo: /assets/img/profile.jpg
-description: Senior Android Engineer and Team Lead with 14+ years of experience. Kotlin, Jetpack Compose, iOS, Kotlin Multiplatform. AI-first and agentic engineering.
+description: Senior Mobile Engineer with 14+ years of experience. Kotlin, Jetpack Compose, iOS, Kotlin Multiplatform, Rust, Python. AI-first and agentic engineering.
 contact:
   - type: email
     label: agustin.tomas.larghi@gmail.com
